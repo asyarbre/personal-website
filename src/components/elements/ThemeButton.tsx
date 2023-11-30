@@ -1,0 +1,26 @@
+import { Button } from '@/components/ui/button';
+import { useTheme } from 'next-themes';
+import { FiMoon, FiSun } from 'react-icons/fi';
+import * as React from 'react';
+
+export default function ThemeButton() {
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => setMounted(true), []);
+
+  return (
+    <Button
+      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+      variant='outline'
+      size='icon'
+      className='hover:border-primary'
+    >
+      {mounted && theme === 'dark' ? (
+        <FiSun className='w-4 h-4' />
+      ) : (
+        <FiMoon className='w-4 h-4' />
+      )}
+    </Button>
+  );
+}
