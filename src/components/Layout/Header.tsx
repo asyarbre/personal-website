@@ -1,8 +1,8 @@
 import clsx from 'clsx';
-import * as React from 'react';
-import ThemeButton from '../elements/ThemeButton';
-import { Button } from '../ui/button';
 import Link from 'next/link';
+import * as React from 'react';
+
+import ThemeButton from '../elements/ThemeButton';
 
 export default function Header() {
   const [onTop, setOnTop] = React.useState<boolean>(true);

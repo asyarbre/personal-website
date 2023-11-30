@@ -1,7 +1,8 @@
-import { Button } from '@/components/ui/button';
 import { useTheme } from 'next-themes';
-import { FiMoon, FiSun } from 'react-icons/fi';
 import * as React from 'react';
+import { FiMoon, FiSun } from 'react-icons/fi';
+
+import { Button } from '@/components/ui/button';
 
 export default function ThemeButton() {
   const { theme, setTheme } = useTheme();
