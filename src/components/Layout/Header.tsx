@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import * as React from 'react';
 
 import ThemeButton from '../elements/ThemeButton';
@@ -7,7 +8,13 @@ import ThemeButton from '../elements/ThemeButton';
 export default function Header() {
   const [onTop, setOnTop] = React.useState<boolean>(true);
 
-  const [active, setActive] = React.useState(false);
+  const [active, setActive] = React.useState('#home');
+
+  const router = useRouter();
+
+  React.useEffect(() => {
+    setActive(router.asPath);
+  }, [router.asPath]);
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -16,30 +23,27 @@ export default function Header() {
 
     window.addEventListener('scroll', handleScroll);
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <header
       className={clsx(
-        'sticky w-full top-0 z-50 transition-shadow',
-        !onTop && 'shadow-sm',
+        'sticky top-0 z-50 transition-shadow',
+        !onTop && 'shadow-md',
       )}
     >
       <div className='h-2 bg-primary' />
-      <nav className='layout flex items-center justify-between py-4 lg:max-w-[68rem]'>
-        <ul className='flex items-center space-x-4'>
+      <nav className='layout bg-background flex items-center justify-between py-4 lg:max-w-[68rem]'>
+        <ul className='flex items-center space-x-6'>
           {links.map((link) => (
             <li key={link.href}>
               <Link
                 href={link.href}
                 className={clsx(
                   'text-sm font-medium transition-colors hover:text-primary lg:text-base',
-                  active && 'text-primary',
+                  active === link.href && 'text-primary',
                 )}
-                onClick={() => setActive(!active)}
               >
                 {link.label}
               </Link>
@@ -54,8 +58,6 @@ export default function Header() {
 
 const links = [
   { href: '/', label: 'Home' },
-  { href: '/experiences', label: 'Experiences' },
   { href: '/projects', label: 'Projects' },
-  { href: '/skiils', label: 'Skills' },
   { href: '/about', label: 'About' },
 ];
