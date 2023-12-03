@@ -12,7 +12,7 @@ export default function FeaturedProjects() {
       <article className='layout'>
         <h3 className='text-primary'>Featured Projects</h3>
         <Separator className='my-2' />
-        <div className='mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-3'>
+        <div className='mt-4 flex flex-wrap justify-center gap-3'>
           {DataProjects.slice(0, 3).map((project) => (
             <ProjectCard key={project.title} project={project} />
           ))}
