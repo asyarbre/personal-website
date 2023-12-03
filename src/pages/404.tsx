@@ -1,5 +1,8 @@
 import styled from '@emotion/styled';
 import { NextPage } from 'next';
+import Link from 'next/link';
+
+import { Button } from '@/components/ui/button';
 
 const NotFoundPage: NextPage = () => {
   return (
@@ -7,9 +10,14 @@ const NotFoundPage: NextPage = () => {
       <StyledNotFoundPage title='404' className='text-7xl'>
         404
       </StyledNotFoundPage>
-      <h2 className='text-xl animate-pulse my-5'>
+      <h2 className='text-xl animate-pulse my-5 text-center'>
         Whoops, there doesn&apos;t seem to be anything here!
       </h2>
+      <Button variant='link' asChild>
+        <Link href='/' className='text-lg'>
+          Go back home
+        </Link>
+      </Button>
     </div>
   );
 };
