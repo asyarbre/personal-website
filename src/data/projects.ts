@@ -82,6 +82,22 @@ const DataProjects: Project[] = [
     image: '/projects/jajanjalan.png',
   },
   {
+    link: 'https://github.com/asyarbre/personal-website',
+    title: 'Personal Website',
+    description: 'my personal website.',
+    techs: [
+      {
+        icon: SiNextdotjs,
+        text: 'Next.js',
+      },
+      {
+        icon: SiTailwindcss,
+        text: 'Tailwind CSS',
+      },
+    ],
+    image: '/projects/personal-website.png',
+  },
+  {
     link: 'https://github.com/asyarbre/inventaris-workshop',
     title: 'Inventory Application',
     description:
