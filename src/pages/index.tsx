@@ -1,13 +1,13 @@
 import FeaturedProjects from '@/components/content/Home/FeaturedProjects';
-import HomePage from '@/components/content/Home/Home';
+import Home from '@/components/content/Home/Home';
 import Skills from '@/components/content/Home/Skills';
 import Layout from '@/components/Layout/Layout';
 
-export default function Home() {
+export default function HomePage() {
   return (
     <Layout>
       <main>
-        <HomePage />
+        <Home />
         <FeaturedProjects />
         <Skills />
       </main>

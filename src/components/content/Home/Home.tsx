@@ -4,7 +4,7 @@ import { SiGithub, SiLinkedin } from 'react-icons/si';
 
 import { Button } from '@/components/ui/button';
 
-export default function HomePage() {
+export default function Home() {
   return (
     <section className='min-h-main mt-52 flex-col justify-center' id='home'>
       <article className='layout'>

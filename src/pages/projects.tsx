@@ -1,7 +1,7 @@
 import Project from '@/components/content/Projects/Project';
 import Layout from '@/components/Layout/Layout';
 
-export default function projects() {
+export default function ProjectsPage() {
   return (
     <Layout>
       <main>
