@@ -1,4 +1,3 @@
-import styled from '@emotion/styled';
 import { ReactNode, useEffect, useState } from 'react';
 
 import InfiniteLoopSlider from '@/components/elements/InfiniteLoopSLider';
@@ -41,23 +40,9 @@ export default function Skills() {
         <div className='flex w-full'>
           <div className='relative flex flex-col gap-y-4 justify-start py-2 w-full overflow-hidden'>
             {sliders}
-            <StyledFade className='hidden dark:fade lg:flex' />
           </div>
         </div>
       </article>
     </section>
   );
 }
-
-const StyledFade = styled.div`
-  pointer-events: none;
-  background: linear-gradient(
-    90deg,
-    #020617,
-    transparent 20%,
-    transparent 80%,
-    #020617
-  );
-  position: absolute;
-  inset: 0;
-`;
