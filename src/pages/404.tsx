@@ -20,10 +20,12 @@ const StyledNotFoundPage = styled.h1`
   animation: glitch 1s linear infinite;
 
   @keyframes glitch {
-    2%, 64% {
+    2%,
+    64% {
       transform: translate(2px, 0) skew(0deg);
     }
-    4%, 60% {
+    4%,
+    60% {
       transform: translate(-2px, 0) skew(0deg);
     }
     62% {

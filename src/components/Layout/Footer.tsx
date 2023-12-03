@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { IconType } from 'react-icons';
 import { SiGithub, SiLinkedin } from 'react-icons/si';
+
 import { Separator } from '../ui/separator';
 
 export default function Footer() {
