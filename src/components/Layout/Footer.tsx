@@ -9,7 +9,7 @@ export default function Footer() {
     <footer className='mt-4 pb-4'>
       <div className='layout flex flex-col items-center justify-center'>
         <Separator className='my-2' />
-        <p className='text-xl font-semibold'>Reach me out</p>
+        <p className='font-semibold lg:text-lg'>Reach me out</p>
         <div className='flex items-center space-x-4'>
           {socialLinks.map((socialLink) => (
             <Link
@@ -23,7 +23,7 @@ export default function Footer() {
             </Link>
           ))}
         </div>
-        <p className='mt-4 text-muted-foreground'>
+        <p className='mt-4 text-sm text-muted-foreground'>
           &copy; {new Date().getFullYear()} Asya'ri. All rights reserved.
         </p>
       </div>
