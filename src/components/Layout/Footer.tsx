@@ -9,13 +9,14 @@ export default function Footer() {
     <footer className='mt-4 pb-4'>
       <div className='layout flex flex-col items-center justify-center'>
         <Separator className='my-2' />
-        <h4>Reach me out</h4>
+        <p className='text-xl font-semibold'>Reach me out</p>
         <div className='flex items-center space-x-4'>
           {socialLinks.map((socialLink) => (
             <Link
               key={socialLink.href}
               href={socialLink.href}
               rel='noopener noreferrer'
+              aria-label='social-link'
               target='_blank'
             >
               <socialLink.icon className='my-auto mt-3 h-6 w-6 hover:text-primary' />
