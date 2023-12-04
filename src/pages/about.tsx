@@ -1,8 +1,9 @@
 import * as React from 'react';
-import Layout from '@/components/Layout/Layout';
+
 import About from '@/components/content/About/About';
-import Education from '@/components/content/About/Education';
 import Career from '@/components/content/About/Career';
+import Education from '@/components/content/About/Education';
+import Layout from '@/components/Layout/Layout';
 
 export default function AboutPage() {
   return (

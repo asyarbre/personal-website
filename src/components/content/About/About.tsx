@@ -1,14 +1,13 @@
 import Image from 'next/image';
 
+import { Stacks } from '@/components/elements/Stacks';
+import { Separator } from '@/components/ui/separator';
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
-
-import { Stacks } from '@/components/elements/Stacks';
-import { Separator } from '@/components/ui/separator';
 
 export default function About() {
   return (
@@ -36,11 +35,11 @@ export default function About() {
             Passionate and skilled Full Stack Engineer with a strong foundation
             in a diverse set of technologies. Proficient in front-end
             development using ReactJS, NextJs, and mobile app development with
-            Flutter and Kotlin. Back-end expertise includes
-            ExpressJs, Laravel, Codeigniter, and database management with MySQL
-            and MongoDB. Well-versed in responsive design frameworks such as
-            Bootstrap and TailwindCSS. Additionally, possess Linux server
-            administration skills and and Google Cloud Platform.
+            Flutter and Kotlin. Back-end expertise includes ExpressJs, Laravel,
+            Codeigniter, and database management with MySQL and MongoDB.
+            Well-versed in responsive design frameworks such as Bootstrap and
+            TailwindCSS. Additionally, possess Linux server administration
+            skills and and Google Cloud Platform.
           </p>
         </article>
         <h3 className='mt-12 text-primary'>Tech Stack</h3>

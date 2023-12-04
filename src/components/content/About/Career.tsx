@@ -1,5 +1,6 @@
-import DataCareer from '@/data/careers';
 import Image from 'next/image';
+
+import DataCareer from '@/data/careers';
 
 export default function Career() {
   return (

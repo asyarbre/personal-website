@@ -59,7 +59,7 @@ const DataCareer: Careers[] = [
     startDate: 'Aug 2019',
     endDate: 'Oct 2019',
     duration: '3 months',
-  }
+  },
 ];
 
 export default DataCareer;
