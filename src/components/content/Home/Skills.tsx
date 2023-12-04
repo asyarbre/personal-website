@@ -35,7 +35,7 @@ export default function Skills() {
   return (
     <section className='flex-col pb-20 justify-center'>
       <article className='layout'>
-        <h3 className='text-primary'>Skills</h3>
+        <h2 className='text-primary'>Skills</h2>
         <Separator className='my-2' />
         <div className='flex w-full'>
           <div className='relative flex flex-col gap-y-4 justify-start py-2 w-full overflow-hidden'>
