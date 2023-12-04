@@ -8,7 +8,7 @@ export const Seo: React.FC<{
   pathname?: string;
 }> = ({
   title,
-  metaDescription,
+  metaDescription = "An online portofolio by Asya'ri, a full stack developer from Indonesia.",
   ogImageUrl = 'https://cdn.discordapp.com/attachments/872706873349001261/1181056795029024818/banner.png',
   pathname = '',
 }) => {
