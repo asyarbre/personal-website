@@ -10,7 +10,7 @@ export default function FeaturedProjects() {
   return (
     <section className='flex-col pb-20 justify-center'>
       <article className='layout'>
-        <h3 className='text-primary'>Featured Projects</h3>
+        <h2 className='text-primary'>Featured Projects</h2>
         <Separator className='my-2' />
         <div className='mt-4 flex flex-wrap justify-center gap-3'>
           {DataProjects.slice(0, 3).map((project) => (
