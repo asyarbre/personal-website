@@ -16,6 +16,7 @@ export default function ThemeButton() {
       variant='outline'
       size='icon'
       className='hover:border-primary'
+      aria-label='Toggle theme'
     >
       {mounted && theme === 'dark' ? (
         <FiSun className='w-4 h-4' />
