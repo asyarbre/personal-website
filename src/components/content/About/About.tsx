@@ -39,7 +39,7 @@ export default function About() {
             Codeigniter, and database management with MySQL and MongoDB.
             Well-versed in responsive design frameworks such as Bootstrap and
             TailwindCSS. Additionally, possess Linux server administration
-            skills and and Google Cloud Platform.
+            skills and Google Cloud Platform.
           </p>
         </article>
         <h3 className='mt-12 text-primary'>Tech Stack</h3>
