@@ -37,6 +37,7 @@ export default function Skills() {
               <Tag key={index} title={title} icon={icon} />
             ))}
           </Marquee>
+        <Separator className='my-2' />
       </article>
     </section>
   );
