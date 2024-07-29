@@ -22,7 +22,7 @@ export function ProjectCard({ project }: { project: Project }) {
   const { title, description, image, link, techs } = project;
   return (
     <Link href={link} rel='noopener noreferrer' target='_blank'>
-      <Card className='w-[350px] hover:scale-[1.02]'>
+      <Card className='w-[350px] hover:scale-[1.02] hover:border-primary'>
         <CardHeader>
           <CardTitle>{title}</CardTitle>
           <CardDescription className='h-10'>{description}</CardDescription>
