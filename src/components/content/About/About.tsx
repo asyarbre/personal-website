@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 
+import Career from '@/components/content/About/Career';
 import Intro from '@/components/content/About/Intro';
 import Resume from '@/components/content/About/Resume';
 import { Stacks } from '@/components/elements/Stacks';
@@ -52,6 +53,9 @@ export default function About() {
         </TabsContent>
         <TabsContent value='resume'>
           <Resume />
+        </TabsContent>
+        <TabsContent value='career'>
+          <Career />
         </TabsContent>
       </Tabs>
 
