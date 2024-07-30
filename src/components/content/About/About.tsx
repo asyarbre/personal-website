@@ -1,16 +1,9 @@
 import { Bookmark } from 'lucide-react';
 import Image from 'next/image';
 
+import Intro from '@/components/content/About/Intro';
+import Resume from '@/components/content/About/Resume';
 import { Stacks } from '@/components/elements/Stacks';
-import { Button } from '@/components/ui/button';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import {
@@ -19,8 +12,6 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
-
-import Intro from './Intro';
 
 export default function About() {
   return (
@@ -46,18 +37,7 @@ export default function About() {
           <Intro />
         </TabsContent>
         <TabsContent value='resume'>
-          <Card>
-            <CardHeader>
-              <CardTitle>Password</CardTitle>
-              <CardDescription>
-                Change your password here. After saving, you'll be logged out.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className='space-y-2'></CardContent>
-            <CardFooter>
-              <Button>Save password</Button>
-            </CardFooter>
-          </Card>
+          <Resume />
         </TabsContent>
       </Tabs>
 
