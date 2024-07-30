@@ -1,9 +1,18 @@
+import Image from 'next/image';
+
 import { Card, CardContent } from '@/components/ui/card';
 
 export default function Intro() {
   return (
     <Card>
       <CardContent className='p-4 space-y-4 leading-[1.8] text-foreground md:leading-loose'>
+        <Image
+          src='/images/profile.jpg'
+          width='500'
+          height='500'
+          alt='Photo Profile'
+          className='rounded-md ml-3 w-24 md:w-32'
+        />
         <p>
           I&apos;m an aspiring{' '}
           <span className='font-semibold text-primary'>Software Engineer</span>{' '}
