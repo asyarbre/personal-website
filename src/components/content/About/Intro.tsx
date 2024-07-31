@@ -1,17 +1,17 @@
-import Image from 'next/image';
-
+import CloudinaryImg from '@/components/elements/CloudinaryImage';
 import { Card, CardContent } from '@/components/ui/card';
 
 export default function Intro() {
   return (
     <Card>
       <CardContent className='p-4 space-y-4 leading-[1.8] text-foreground md:leading-loose'>
-        <Image
-          src='/images/profile.jpg'
-          width='500'
-          height='500'
-          alt='Photo Profile'
+        <CloudinaryImg
           className='rounded-md ml-3 w-24 md:w-32'
+          publicId='v1722429237/profile_elvl6q.jpg'
+          width={500}
+          height={500}
+          alt='Photo of me'
+          preview={false}
         />
         <p>
           I&apos;m an aspiring{' '}

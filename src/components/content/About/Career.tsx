@@ -1,11 +1,11 @@
 import { ChevronRight } from 'lucide-react';
-import Image from 'next/image';
 import { useState } from 'react';
 
 import { cn } from '@/lib/utils';
 
 import DataCareer from '@/data/careers';
 
+import CloudinaryImg from '@/components/elements/CloudinaryImage';
 import { Card, CardContent } from '@/components/ui/card';
 
 export default function Career() {
@@ -29,18 +29,19 @@ export default function Career() {
           >
             <div className='mt-1.5 w-fit'>
               {career.logo && (
-                <Image
-                  src={career.logo}
-                  width='50'
-                  height='50'
+                <CloudinaryImg
+                  publicId={career.logo}
+                  width={50}
+                  height={50}
                   alt={career.company}
-                  className='h-14 w-14 rounded bg-neutral-50 p-1 hover:scale-110 hover:bg-transparent'
+                  className='duration-500 ease-in-out scale-100 blur-0 grayscale-0 h-14 w-14 rounded bg-neutral-50 p-1 hover:scale-110 hover:bg-transparent'
+                  preview={false}
                 />
               )}
             </div>
             <div className='w-4/5 space-y-3'>
               <div className='space-y-1'>
-                <div className='flex gap-1 text-sm md:gap-2'>
+                <div className='flex gap-1 md:gap-2'>
                   <h6 className='font-bold'>{career.position}</h6>
                   {career.type && (
                     <span className='text-muted-foreground font-semibold'>
