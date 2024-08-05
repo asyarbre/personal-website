@@ -2,14 +2,16 @@ import Link from 'next/link';
 import { IconType } from 'react-icons';
 import { SiGithub, SiLinkedin } from 'react-icons/si';
 
+import Spotify from '@/components/elements/Spotify';
 import { Separator } from '@/components/ui/separator';
 
 export default function Footer() {
   return (
     <footer className='mt-8 pb-4'>
       <div className='layout flex flex-col items-center justify-center'>
-        <Separator className='mb-4' />
-        <p className='font-semibold text-muted-foreground lg:text-lg'>
+        <Separator className='mt-4' />
+        <Spotify className='mt-4' />
+        <p className='mt-4 font-semibold text-muted-foreground lg:text-lg'>
           Reach me out
         </p>
         <div className='flex items-center space-x-4'>
