@@ -1,15 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
+  eslint: {
+    dirs: ['src'],
+  },
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'cdn.discordapp.com',
-      },
-    ],
-    unoptimized: true,
+    domains: ['res.cloudinary.com', 'i.scdn.co'],
   },
 };
 
