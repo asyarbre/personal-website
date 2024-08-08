@@ -23,7 +23,7 @@ export default function Home() {
         <div className='mt-8 flex text-muted-foreground flex-wrap gap-4 gap-y-2 md:text-lg lg'>
           <Button variant='outline' asChild>
             <Link
-              href='https://bit.ly/resume-asyari'
+              href='https://bit.ly/cv-asyari'
               rel='noopener noreferrer'
               target='_blank'
             >
