@@ -1,14 +1,14 @@
 import styled from '@emotion/styled';
 import { NextPage } from 'next';
 import Link from 'next/link';
+import { NextSeo } from 'next-seo';
 
-import { Seo } from '@/components/elements/Seo';
 import { Button } from '@/components/ui/button';
 
 const NotFoundPage: NextPage = () => {
   return (
     <>
-      <Seo title='Not Found' />
+      <NextSeo title='404 - Not Found' />
       <div className='flex flex-col justify-center items-center min-h-main'>
         <StyledNotFoundPage title='404' className='text-7xl'>
           404
