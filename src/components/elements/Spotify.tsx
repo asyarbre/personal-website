@@ -15,15 +15,17 @@ export default function Spotify({
   const { data } = useSWR<SpotifyData>('/api/spotify');
 
   return data?.isPlaying ? (
-    <div className={className} {...rest}>
+    <div
+      className={cn('border border-border rounded-md p-3', className)}
+      {...rest}
+    >
+      <p className='text-sm text-center italic font-medium'>Now Listening</p>
       <Link
         rel='noopener noreferrer'
         target='_blank'
         href={data.songUrl}
         className={cn(
-          'relative flex items-center gap-4 p-3',
-          'border border-border',
-          'w-72 rounded-md',
+          'relative flex items-center w-72 gap-4 mt-2',
           'shadow-sm dark:shadow-none',
           'focus:outline-none focus-visible:ring focus-visible:ring-primary',
         )}
