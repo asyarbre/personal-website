@@ -13,7 +13,12 @@ export default function Header() {
   const router = useRouter();
 
   React.useEffect(() => {
-    setActive(router.asPath);
+    const path = router.asPath;
+    if (path.startsWith('/projects')) {
+      setActive('/projects');
+    } else {
+      setActive(path);
+    }
   }, [router.asPath]);
 
   React.useEffect(() => {
