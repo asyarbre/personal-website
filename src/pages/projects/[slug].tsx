@@ -1,12 +1,37 @@
+import { TooltipContent } from '@radix-ui/react-tooltip';
 import fs from 'fs';
 import matter from 'gray-matter';
 import { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
+import Link from 'next/link';
+import { MDXRemote } from 'next-mdx-remote';
+import { serialize } from 'next-mdx-remote/serialize';
+import { NextSeo } from 'next-seo';
 import path from 'path';
-import ReactMarkdown from 'react-markdown';
+import { HiLink } from 'react-icons/hi';
+import { SiGithub } from 'react-icons/si';
 
-import ProjectLayout from '@/components/Layout/ProjectLayout';
-import { Heading } from '@/components/mdx/Heading';
-import Para from '@/components/mdx/Para';
+import CloudinaryImg from '@/components/elements/CloudinaryImage';
+import { Stacks } from '@/components/elements/Stacks';
+import Layout from '@/components/Layout/Layout';
+import CustomMDXProvider from '@/components/mdx/MDXProvider';
+import { Button } from '@/components/ui/button';
+import { Separator } from '@/components/ui/separator';
+import {
+  Tooltip,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
+
+type FrontMatterType = {
+  title: string;
+  author: string;
+  banner: string;
+  link?: string;
+  github?: string;
+  topics: string[];
+  description: string;
+  stacks: string[];
+};
 
 export async function getStaticPaths() {
   const files = fs.readdirSync('src/contents/project');
@@ -21,48 +46,100 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(ctx: GetStaticPropsContext) {
-  const { slug } = ctx.params as { slug: string };
-
-  const source = fs.readFileSync(
-    path.join('src/contents/project', `${slug}.mdx`),
-    'utf8',
+  const { params } = ctx as { params: { slug: string } };
+  const filePath = path.join(
+    process.cwd(),
+    'src/contents/project',
+    `${params.slug}.mdx`,
   );
+  const fileContent = fs.readFileSync(filePath, 'utf-8');
+  const { content, data } = matter(fileContent);
+  const mdxSource = await serialize(content);
 
-  const { data, content } = matter(source);
   return {
     props: {
-      data,
-      content,
+      source: mdxSource,
+      frontMatter: data,
     },
   };
 }
 
-function ProjectPage({
-  data,
-  content,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+function DetailProjectPage({
+  source,
+  frontMatter,
+}: InferGetStaticPropsType<typeof getStaticProps> & {
+  frontMatter: FrontMatterType;
+}) {
   return (
     <>
-      <ProjectLayout
-        meta={{
-          author: data.author,
-          title: data.title,
-          slug: data.slug,
-          topics: data.topics,
-        }}
-      >
-        <ReactMarkdown
-          // eslint-disable-next-line react/no-children-prop
-          children={content}
-          components={{
-            h1: Heading.H1,
-            h2: Heading.H2,
-            p: Para,
-          }}
-        />
-      </ProjectLayout>
+      <NextSeo title={frontMatter.description} />
+      <Layout>
+        <main className='layout'>
+          <section>
+            <CloudinaryImg
+              width={1440}
+              height={700}
+              publicId={frontMatter.banner}
+              alt={frontMatter.title}
+            />
+            <h1 className='mt-4 font-bold text-foreground md:text-3xl text-2xl'>
+              {frontMatter.title}
+            </h1>
+            <p className='mt-2 text-sm text-muted-foreground'>
+              {frontMatter.description}
+            </p>
+            <div className='mt-4 text-sm flex items-center justify-between'>
+              <div className='flex items-center gap-2'>
+                <span>Tech Stacks: </span>
+                <div className='flex items-center gap-x-2'>
+                  <TooltipProvider>
+                    {frontMatter.stacks.map((tech) => (
+                      <Tooltip key={tech}>
+                        <TooltipTrigger>
+                          {Stacks[tech] || <span>{tech}</span>}
+                        </TooltipTrigger>
+                        <TooltipContent>{tech}</TooltipContent>
+                      </Tooltip>
+                    ))}
+                  </TooltipProvider>
+                </div>
+              </div>
+              <div className='flex items-center'>
+                {frontMatter.github && (
+                  <Button variant='link' asChild>
+                    <Link
+                      href={frontMatter.github}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      <SiGithub className='text-lg text-gray-800 dark:text-white mr-2' />
+                      Repository
+                    </Link>
+                  </Button>
+                )}
+                {frontMatter.link && (
+                  <Button variant='link' asChild>
+                    <Link
+                      href={frontMatter.link}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      <HiLink className='text-lg text-gray-800 dark:text-white mr-2' />
+                      Open Live Site
+                    </Link>
+                  </Button>
+                )}
+              </div>
+            </div>
+            <Separator className='my-4' />
+          </section>
+          <CustomMDXProvider>
+            <MDXRemote {...source} />
+          </CustomMDXProvider>
+        </main>
+      </Layout>
     </>
   );
 }
 
-export default ProjectPage;
+export default DetailProjectPage;
