@@ -25,7 +25,7 @@ export type stacksProps = {
   [key: string]: JSX.Element;
 };
 
-const iconSize = 24;
+const iconSize = 18;
 
 export const Stacks: stacksProps = {
   'Next.js': <SiNextdotjs size={iconSize} />,
