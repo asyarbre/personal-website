@@ -122,6 +122,7 @@ export default function CloudinaryImg({
           onClick={() => setIsOpen(false)}
         >
           <Image
+            unoptimized
             width={width}
             height={height}
             src={url}
