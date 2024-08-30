@@ -1,6 +1,7 @@
 import axios from 'axios';
 import type { AppProps } from 'next/app';
 import { DefaultSeo } from 'next-seo';
+import { PagesTopLoader } from 'nextjs-toploader/pages';
 import { SWRConfig } from 'swr';
 
 import '@/styles/globals.css';
@@ -19,6 +20,7 @@ export default function App({ Component, pageProps }: AppProps) {
             fetcher: (url) => axios.get(url).then((res) => res.data),
           }}
         >
+          <PagesTopLoader color='#020617' showSpinner={false} />
           <Component {...pageProps} />
         </SWRConfig>
       </ThemeProvider>
