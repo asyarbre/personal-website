@@ -1,6 +1,7 @@
 import { TooltipContent } from '@radix-ui/react-tooltip';
 import fs from 'fs';
 import matter from 'gray-matter';
+import { ChevronLeft } from 'lucide-react';
 import { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
 import Link from 'next/link';
 import { MDXRemote } from 'next-mdx-remote';
@@ -76,6 +77,10 @@ function DetailProjectPage({
       <Layout>
         <main className='layout'>
           <section>
+            <div className='flex gap-2 w-max hover:gap-3 items-center mb-6 transition-all duration-300 font-medium text-foreground hover:text-primary cursor-pointer'>
+              <ChevronLeft />
+              <Link href='/projects'>Back</Link>
+            </div>
             <CloudinaryImg
               width={1440}
               height={700}
