@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import * as React from 'react';
 
+import { Stacks } from '@/components/elements/Stacks';
 import {
   Card,
   CardContent,
@@ -19,7 +20,7 @@ import {
 import { Project } from '@/types/project';
 
 export function ProjectCard({ project }: { project: Project }) {
-  const { title, description, image, link, techs } = project;
+  const { title, description, image, link, stacks } = project;
   return (
     <Link href={link} rel='noopener noreferrer' target='_blank'>
       <Card className='w-[350px] hover:scale-[1.02] hover:border-primary'>
@@ -28,12 +29,12 @@ export function ProjectCard({ project }: { project: Project }) {
           <CardDescription className='h-10'>{description}</CardDescription>
           <div className='flex items-center space-x-2'>
             <TooltipProvider>
-              {techs.map((tech) => (
-                <Tooltip key={tech.text}>
+              {stacks?.map((tech) => (
+                <Tooltip key={tech} delayDuration={0}>
                   <TooltipTrigger>
-                    <tech.icon />
+                    {Stacks[tech] || <span>{tech}</span>}
                   </TooltipTrigger>
-                  <TooltipContent>{tech.text}</TooltipContent>
+                  <TooltipContent>{tech}</TooltipContent>
                 </Tooltip>
               ))}
             </TooltipProvider>

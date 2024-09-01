@@ -2,9 +2,6 @@ export type Project = {
   link: string;
   title: string;
   description: string;
-  techs: {
-    icon: React.ComponentType;
-    text: string;
-  }[];
+  stacks?: string[];
   image?: string;
 };
