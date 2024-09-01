@@ -109,4 +109,12 @@
   body {
     @apply bg-background text-foreground;
   }
+  pre {
+    overflow-x: auto;
+    padding: 1rem 0;
+  }
+
+  pre [data-line] {
+    padding: 0 1rem;
+  }
 }

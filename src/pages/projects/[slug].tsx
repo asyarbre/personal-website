@@ -10,6 +10,7 @@ import { NextSeo } from 'next-seo';
 import path from 'path';
 import { HiLink } from 'react-icons/hi';
 import { SiGithub } from 'react-icons/si';
+import rehypePrettyCode from 'rehype-pretty-code';
 
 import CloudinaryImg from '@/components/elements/CloudinaryImage';
 import { Stacks } from '@/components/elements/Stacks';
@@ -34,6 +35,11 @@ type FrontMatterType = {
   stacks: string[];
 };
 
+/** @type {import('rehype-pretty-code').Options} */
+const options = {
+  theme: 'github-dark',
+};
+
 export async function getStaticPaths() {
   const files = fs.readdirSync('src/contents/project');
   return {
@@ -55,7 +61,11 @@ export async function getStaticProps(ctx: GetStaticPropsContext) {
   );
   const fileContent = fs.readFileSync(filePath, 'utf-8');
   const { content, data } = matter(fileContent);
-  const mdxSource = await serialize(content);
+  const mdxSource = await serialize(content, {
+    mdxOptions: {
+      rehypePlugins: [[rehypePrettyCode, options]],
+    },
+  });
 
   return {
     props: {
