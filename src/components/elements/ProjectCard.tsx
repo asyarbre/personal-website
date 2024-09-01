@@ -1,3 +1,4 @@
+import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import * as React from 'react';
@@ -23,7 +24,7 @@ export function ProjectCard({ project }: { project: Project }) {
   const { title, description, image, link, stacks } = project;
   return (
     <Link href={link} rel='noopener noreferrer' target='_blank'>
-      <Card className='w-[350px] hover:scale-[1.02] hover:border-primary'>
+      <Card className='group w-[350px] hover:scale-[1.02] hover:border-primary duration-300'>
         <CardHeader>
           <CardTitle>{title}</CardTitle>
           <CardDescription className='h-10'>{description}</CardDescription>
@@ -42,15 +43,20 @@ export function ProjectCard({ project }: { project: Project }) {
         </CardHeader>
         <CardContent>
           {image && (
-            <Image
-              className='w-full h-40 rounded object-cover object-center'
-              src={image}
-              width={500}
-              height={200}
-              alt={title}
-            />
+            <div className='relative'>
+              <Image
+                className='w-full h-40 rounded object-cover object-center'
+                src={image}
+                width={500}
+                height={200}
+                alt={title}
+              />
+              <div className='absolute left-0 top-0 flex h-full w-full items-center justify-center gap-1 rounded bg-background text-sm font-medium text-black dark:text-white opacity-0 transition-opacity duration-300 group-hover:opacity-90'>
+                <span>View Project</span>
+                <ArrowRight size={20} />
+              </div>
+            </div>
           )}
-          <p className='mt-2 inline-block font-medium'>See more →</p>
         </CardContent>
       </Card>
     </Link>
