@@ -16,6 +16,7 @@ import {
   SiPhp,
   SiPrisma,
   SiReact,
+  SiShadcnui,
   SiTailwindcss,
   SiTypescript,
   SiVite,
@@ -50,4 +51,5 @@ export const Stacks: stacksProps = {
   Kotlin: <SiKotlin size={iconSize} className='text-purple-500' />,
   Flutter: <SiFlutter size={iconSize} className='text-blue-500' />,
   Dart: <SiDart size={iconSize} className='text-blue-500' />,
+  Shadcnui: <SiShadcnui size={iconSize} />,
 };
