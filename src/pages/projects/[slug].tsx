@@ -92,8 +92,8 @@ function DetailProjectPage({
               <Link href='/projects'>Back</Link>
             </div>
             <CloudinaryImg
-              width={1440}
-              height={700}
+              width={1400}
+              height={790}
               publicId={frontMatter.banner}
               alt={frontMatter.title}
             />
