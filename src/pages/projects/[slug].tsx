@@ -83,7 +83,7 @@ function DetailProjectPage({
 }) {
   return (
     <>
-      <NextSeo title={frontMatter.description} />
+      <NextSeo title={frontMatter.title} />
       <Layout>
         <main className='layout'>
           <section>
