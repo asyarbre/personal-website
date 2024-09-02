@@ -2,6 +2,7 @@ import { BsFillBootstrapFill } from 'react-icons/bs';
 import {
   SiCodeigniter,
   SiDart,
+  SiDocker,
   SiExpress,
   SiFirebase,
   SiFlutter,
@@ -52,4 +53,5 @@ export const Stacks: stacksProps = {
   Flutter: <SiFlutter size={iconSize} className='text-blue-500' />,
   Dart: <SiDart size={iconSize} className='text-blue-500' />,
   Shadcnui: <SiShadcnui size={iconSize} />,
+  Docker: <SiDocker size={iconSize} className='text-blue-500' />,
 };
