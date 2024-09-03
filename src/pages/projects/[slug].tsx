@@ -100,10 +100,10 @@ function DetailProjectPage({
             <h1 className='mt-4 font-bold text-foreground md:text-3xl text-2xl'>
               {frontMatter.title}
             </h1>
-            <p className='mt-2 text-sm text-muted-foreground'>
+            <p className='mt-2 text-muted-foreground'>
               {frontMatter.description}
             </p>
-            <div className='mt-4 text-sm flex items-center justify-between'>
+            <div className='mt-4 flex items-center justify-between'>
               <div className='flex items-center gap-2'>
                 <span>Tech Stacks: </span>
                 <div className='flex items-center gap-x-2'>
