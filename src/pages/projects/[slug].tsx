@@ -93,7 +93,7 @@ function DetailProjectPage({
             </div>
             <CloudinaryImg
               width={1400}
-              height={790}
+              height={700}
               publicId={frontMatter.banner}
               alt={frontMatter.title}
             />
