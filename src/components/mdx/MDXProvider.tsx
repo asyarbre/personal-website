@@ -1,6 +1,7 @@
 import { MDXProvider } from '@mdx-js/react';
 
 import CloudinaryImg from '@/components/elements/CloudinaryImage';
+import SplitImage, { Split } from '@/components/elements/SplitImage';
 import { Heading } from '@/components/mdx/Heading';
 import Para from '@/components/mdx/Para';
 import UnorderedList from '@/components/mdx/UnorderedList';
@@ -11,6 +12,8 @@ const components = {
   h3: Heading.H3,
   p: Para,
   ul: UnorderedList,
+  Split,
+  SplitImage,
   CloudinaryImg,
 };
 
