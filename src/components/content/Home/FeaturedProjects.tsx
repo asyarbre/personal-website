@@ -13,9 +13,12 @@ export default function FeaturedProjects() {
         <h2 className='text-primary'>Featured Projects</h2>
         <Separator className='my-2' />
         <div className='mt-4 flex flex-wrap justify-center gap-3'>
-          {DataProjects.slice(0, 3).map((project) => (
-            <ProjectCard key={project.title} project={project} />
-          ))}
+          {DataProjects.map(
+            (project) =>
+              project.isFeatured && (
+                <ProjectCard key={project.title} project={project} />
+              ),
+          )}
         </div>
         <div className='flex justify-center mt-8'>
           <Button size='lg' variant='secondary' asChild>
