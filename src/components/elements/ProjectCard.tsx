@@ -1,8 +1,8 @@
 import { ArrowRight } from 'lucide-react';
-import Image from 'next/image';
 import Link from 'next/link';
 import * as React from 'react';
 
+import CloudinaryImg from '@/components/elements/CloudinaryImage';
 import { Stacks } from '@/components/elements/Stacks';
 import {
   Card,
@@ -23,7 +23,7 @@ import { Project } from '@/types/project';
 export function ProjectCard({ project }: { project: Project }) {
   const { title, description, image, link, stacks } = project;
   return (
-    <Link href={link} rel='noopener noreferrer' target='_blank'>
+    <Link href={link}>
       <Card className='group w-[350px] hover:scale-[1.02] hover:border-primary duration-300'>
         <CardHeader>
           <CardTitle>{title}</CardTitle>
@@ -44,9 +44,9 @@ export function ProjectCard({ project }: { project: Project }) {
         <CardContent>
           {image && (
             <div className='relative'>
-              <Image
+              <CloudinaryImg
                 className='w-full h-40 rounded object-cover object-center'
-                src={image}
+                publicId={image}
                 width={500}
                 height={200}
                 alt={title}
